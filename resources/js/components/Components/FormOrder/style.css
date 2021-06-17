@@ -1,0 +1,27 @@
+.button-submit-order,
+.button-submit-question,
+.button-add-product-cart {
+    border: none;
+    background-color: #007dfd;
+    padding: 10px 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: white;
+    line-height: 32px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+
+.full-block-form {
+    width: 400px;
+}
+
+.form-block {
+    margin-top: 16px;
+}
+
+.content-form {
+    padding: 5px 10px;
+}
+.data-block-input {
+    margin-bottom: 8px;
+}

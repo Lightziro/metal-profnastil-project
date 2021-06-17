@@ -1,0 +1,20 @@
+.logo-client-img {
+    max-width: 100%;
+    vertical-align: middle;
+    max-height: 80px;
+    margin: 20px 40px;
+}
+.bottom-tb-area {
+    text-align: center;
+}
+.fb-end-line {
+    border-top: 2px solid #707485;
+    opacity: 0.1;
+    margin: 15px auto;
+}
+.title-top-tb {
+    text-align: center;
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+

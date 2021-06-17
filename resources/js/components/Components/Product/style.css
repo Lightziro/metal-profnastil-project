@@ -1,0 +1,10 @@
+.card-product {
+    width: 350px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+.color-product{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
