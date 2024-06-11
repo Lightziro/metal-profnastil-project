@@ -1,0 +1,56 @@
+.pictureLogin {
+    background-image: url("/images/picture/other/login-picture.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper {
+    height: 100vh;
+}
+.adminContainer {
+    display: flex;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.headerPanel {
+    line-height: 1.5;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-image: none;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: auto;
+    right: 0;
+    color: rgb(255, 255, 255);
+    box-shadow: none;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.72);
+
+    @media (min-width: 1200px) {
+        width: calc(100% - 281px)
+    }
+}
+
+.adminSectionWrapper {
+    @media (min-width: 1200px) {
+        padding-top: 116px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    overflow: auto;
+    min-height: 100%;
+    padding-top: 88px;
+    padding-bottom: 80px;
+}

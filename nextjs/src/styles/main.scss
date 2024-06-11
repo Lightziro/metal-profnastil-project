@@ -1,0 +1,74 @@
+@import "variables";
+@import "dadata";
+@import "utils";
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+}
+
+.paper-wrapper {
+    background-color: rgb(255, 255, 255);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 1px -2px, rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    letter-spacing: 0.01071em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.border-main {
+    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+}
+
+.card-wrapper {
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+    overflow: hidden;
+    min-width: 275px;
+    padding: 8px;
+}
+
+.main-picture-portal {
+    width: 100%;
+    padding: 20px;
+}
+
+.portal-component-wrapper {
+    margin-bottom: 16px;
+}
+
+.main-divider {
+    margin: 0;
+    flex-shrink: 0;
+    border-width: 0 0 thin;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+.page-wrapper {
+    min-height: calc(100vh - 88px);
+    flex-grow: 1;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+
+body {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    //// FIX material
+    //overflow: auto !important;
+    padding: 0 !important;
+    font-family: "Roboto";
+    margin: 0 !important;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1240px;
+    position: relative;
+    width: 100%;
+}

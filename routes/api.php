@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\DictionaryController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\QuestionController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +17,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+Route::group(['prefix' => 'question'], function () {
+   Route::post('/', [QuestionController::class, 'newQuestion']);
+});
+Route::group(['prefix' => 'order'], function () {
+    Route::post('/', [OrderController::class, 'newOrder']);
+});
+Route::group(['prefix' => 'dictionary'], function () {
+   Route::get('/categories', [DictionaryController::class, 'getCategories']);
 });
 
 Route::post('/order/person/new', 'OrderController@addOrder');

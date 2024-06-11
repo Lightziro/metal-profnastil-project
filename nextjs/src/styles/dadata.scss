@@ -1,0 +1,42 @@
+.react-dadata__container {
+    position: relative;
+}
+
+.react-dadata__suggestion-note {
+    font-size: 14px;
+    color: #828282;
+    padding: 10px 10px 5px 10px;
+}
+
+.react-dadata__suggestion--line-through {
+    text-decoration: line-through;
+}
+
+.react-dadata__suggestion-subtitle-item:last-child {
+    margin-right: 0;
+}
+
+.react-dadata mark {
+    background: none;
+}
+
+.react-dadata--highlighted {
+    color: #0094FF;
+}
+
+
+.fieldSuggestionsCurrent {
+    background-color: rgba(0, 124, 214, 0.15);
+}
+
+.fieldSuggestionItem:hover {
+    background-color: rgba(0, 124, 214, 0.1);
+}
+
+.cart-react-dadata__suggestion-subtitle-item {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 4px;
+}
+
+

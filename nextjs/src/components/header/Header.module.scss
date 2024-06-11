@@ -1,0 +1,22 @@
+.headerWrapper {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+    margin: 20px 0;
+}
+
+.navLink {
+    display: block;
+    padding: 8px 16px;
+    color: #007dfd;
+    text-decoration: none;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    &.active {
+        color: white;
+        background-color: #007dfd;
+        border-radius: 5px;
+    }
+}

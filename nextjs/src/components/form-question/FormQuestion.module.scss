@@ -1,0 +1,18 @@
+.formQuestion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.successText {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: #007dfd;
+}
+.titleText {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 15px;
+    margin-top: 0;
+}

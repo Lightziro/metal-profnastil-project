@@ -11,19 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/ProductsList', function () {
-    return view('welcome');
-});
-Route::get('/Cart', function () {
-    return view('welcome');
-});
-Route::get('/Product/{id}', function () {
-    return view('welcome');
-});
-Route::get('/Contact', function () {
-    return view('welcome');
-});
-Route::get('/Test', 'OrderController@fullPriceOrder');
+use Illuminate\Support\Facades\Route;
+
+
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+//Route::get('/ProductsList', function () {
+//    return view('welcome');
+//});
+//Route::get('/Cart', function () {
+//    return view('welcome');
+//});
+//Route::get('/Product/{id}', function () {
+//    return view('welcome');
+//});
+//Route::get('/Contact', function () {
+//    return view('welcome');
+//});
+//Route::get('/Test', 'OrderController@fullPriceOrder');

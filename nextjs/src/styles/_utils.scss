@@ -1,0 +1,108 @@
+.flex {
+    display: flex;
+}
+.direction {
+    display: flex;
+    flex-direction: column;
+}
+.wrap {
+    flex-wrap: wrap;
+}
+.justifyBetween {
+    justify-content: space-between;
+}
+.gap10 {
+    gap: 10px;
+}
+.gap30 {
+    gap: 30px;
+}
+.w100 {
+    width: 100%;
+}
+.plr-10 {
+    padding: 0 10px;
+}
+.plr-30 {
+    padding: 0 30px;
+}
+.mt-20 {
+    margin-top: 20px !important;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #007dfd;
+    border-radius: 5px;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    cursor: pointer;
+    &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+}
+.labelField {
+    &.required {
+        &::after {
+            content: "*";
+            color: red;
+            margin-left: 5px;
+        }
+    }
+    color: #383838;
+    font-size: 14px !important;
+    margin-bottom: 6px !important;
+}
+
+.field {
+    display: block;
+    box-sizing: border-box;
+    height: 38px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.field:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgba(0, 124, 214, 0.3);
+    border-color: #007CD6;
+    outline: none;
+}
+.fieldError {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 0 3px rgb(255, 255, 255);
+    border-color: #ff0000;
+    outline: none;
+}
+
+.fieldSuggestions {
+    position: absolute;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0 1px 6px 3px rgba(0, 0, 0, .1);
+    top: calc(100% + 2px);
+    border-radius: 4px;
+    padding: 0;
+    overflow: hidden;
+    margin: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+}
+
+.fieldSuggestionItem {
+    font-size: 15px;
+    padding: 7px 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    display: block;
+    background: none;
+    border: none;
+    text-align: left;
+}

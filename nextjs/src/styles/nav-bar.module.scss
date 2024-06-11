@@ -1,0 +1,87 @@
+.portalNavBar {
+    display: flex;
+    flex-direction: column;
+    z-index: 1100;
+    margin-bottom: 15px;
+    background-color: #dbeeff;
+    border-radius: 0 0 15px 15px;
+
+    .logoWrapper {
+        display: flex;
+        margin-right: 20px;
+
+        img {
+            height: 32px;
+        }
+    }
+
+    .navBarWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+
+        .icon-wrapper {
+            border-radius: 8px;
+            background-color: #e3f2fd;
+            padding: 5px;
+            color: #1a5413;
+            transition: all 0.2s ease-in-out 0s;
+
+            &:hover {
+                background-color: rgba(144, 202, 249, 0.85);
+                color: white;
+            }
+        }
+    }
+
+    //.nav-bar-portal-user {
+    //    display: flex;
+    //    justify-content: center;
+    //    align-items: center;
+    //
+    //    .nav-bar-user-avatar {
+    //        padding: 5px;
+    //        color: #e3f2fd;
+    //        border-radius: 12px;
+    //        background: #e3f2fd;
+    //        transition: all 0.2s ease-in-out 0s;
+    //        cursor: pointer;
+    //
+    //        .MuiAvatar-root {
+    //            transition: inherit;
+    //        }
+    //
+    //        &:hover {
+    //            background-color: rgba(144, 202, 249, 0.85);
+    //
+    //            .MuiAvatar-root {
+    //                transform: scale(0.85);
+    //            }
+    //        }
+    //    }
+    //}
+}
+
+.emptyBlock {
+    flex-grow: 1;
+}
+
+.backdropSearch {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: #000;
+    opacity: .3;
+}
+
+.inputSearch {
+    z-index: 100;
+}
+
+.dropDownSearch {
+    z-index: 1101 !important;
+    position: fixed !important;
+}

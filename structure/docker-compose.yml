@@ -1,13 +1,13 @@
 version: "3.7"
 services:
-    php-base:
+    php-app:
         build:
             args:
                 user: sammy
                 uid: 1000
             context: ./php/base
-        image: php-base
-        container_name: php-base
+        image: php-app
+        container_name: php-app
         restart: unless-stopped
         volumes:
             - ../docker/php:/usr/local/etc/php/conf.d/
@@ -19,27 +19,23 @@ services:
         environment:
             PHP_IDE_CONFIG: "serverName=Docker"
 
-    mysql:
-        image: mysql:8.0
-        container_name: mysql
-#        platform: linux/x86_64
-        restart: unless-stopped
-        tty: true
-        ports:
-            - 3306:3306
-        environment:
-            MYSQL_DATABASE: shop
-            MYSQL_ROOT_PASSWORD: root
-            DB_USER: root
-            DB_PASSWORD: root
-            SERVICE_NAME: mysql
-        volumes:
-            - ../structure/mysql/data:/var/lib/mysql
-#            - ../structure/mysql/my_dev.cnf:/etc/my.cnf.d/my.cnf
-        networks:
-            - laravel
-        depends_on:
-            - php-base
+    postgres:
+      image: postgres:15
+      container_name: postgres
+      restart: always
+      shm_size: '1gb'
+      environment:
+        POSTGRES_PASSWORD: root
+        POSTGRES_USER: root
+        POSTGRES_DB: prof_list
+      volumes:
+        - ../structure/postgres/data:/var/lib/postgresql/data
+      ports:
+        - "5432:5432"
+      networks:
+        - laravel
+      depends_on:
+        - php-app
 
     nginx:
         image: nginx:alpine
@@ -47,7 +43,7 @@ services:
         restart: unless-stopped
         tty: true
         depends_on:
-            - php-base
+            - php-app
         environment:
             - NGINX_PORT=8080
         ports:

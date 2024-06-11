@@ -1,0 +1,35 @@
+.workList {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.title {
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.workBlock {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 10px;
+    background: #007dfd;
+    text-align: center;
+    color: white;
+    &.disabled {
+        background-color: #ccc;
+    }
+    .day {
+        font-weight: bold;
+    }
+    .subTitle {
+        font-weight: 400;
+    }
+}
+@media screen and (max-width: 955px) {
+    .workList {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

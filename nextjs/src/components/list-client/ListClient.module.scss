@@ -1,0 +1,18 @@
+.wrapperList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    .clientPicture {
+        max-width: 100%;
+        vertical-align: middle;
+        max-height: 80px;
+    }
+}
+.textTitle {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}

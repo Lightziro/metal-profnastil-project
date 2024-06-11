@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\DataOrder;
+use App\Http\Request\OrderRequest;
 use App\Library\Constant;
 use App\Orders;
 use App\Product;
+use App\Services\Order\NewOrderService;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use function foo\func;
 
 class OrderController extends Controller
 {
-	private $messageSubject = 'Новый заказ от';
+    public function newOrder(OrderRequest $request, NewOrderService $newOrderService)
+    {
+        $order = $newOrderService->execute($request);
+        return $order;
+    }
 
 	public function addOrder(Request $request)
 	{

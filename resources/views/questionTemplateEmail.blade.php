@@ -146,7 +146,7 @@
                                                             <td align="center">
                                                                 <div style="color:#313131;font-family:'ariel' , 'helvetica' , sans-serif;font-size:16px;line-height:24px;text-align:left">
                                                                     <strong>Дата составления вопроса:</strong><br>
-                                                                    {{ $dateQuestion }}<br>
+                                                                    {{ now()->format('Y-m-d') }}<br>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -218,7 +218,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Клиент: </strong><span
-                                                                style="color: black">{{ $nameClient }}</span>
+                                                                style="color: black">{{ $nameClient ?? '' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -226,7 +226,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Почта: </strong><span
-                                                                style="color: black">{{ $emailClient }}</span>
+                                                                style="color: black">{{ $emailClient ?? '' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -234,7 +234,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Телефон: </strong><span
-                                                                style="color: black">{{ $phoneClient }}</span>
+                                                                style="color: black">{{ $phoneClient ?? '' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -242,7 +242,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Комментарий: </strong><span
-                                                                style="color: black">{{$commentClient}}</span>
+                                                                style="color: black">{{$commentClient ?? ''}}</span>
                                                     </div>
                                                 </td>
                                             </tr>
