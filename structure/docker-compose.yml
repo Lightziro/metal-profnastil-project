@@ -69,8 +69,6 @@ services:
     certbot:
       ports:
         - "6000:80"
-      env_file:
-        - .env
       volumes:
         - ./nginx/:/etc/nginx/
       build:
