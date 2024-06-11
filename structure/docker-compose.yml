@@ -44,18 +44,20 @@ services:
         tty: true
         depends_on:
             - php-app
-        #environment:
-        #    - NGINX_PORT=8080
         ports:
             - "80:80"
             - "443:443"
         volumes:
             - ../:/var/www
-            - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+            - ./nginx/nginx_dev.conf:/etc/nginx/nginx_dev.conf:ro
+            - ./nginx/nginx_prod.conf:/etc/nginx/nginx_prod.conf:ro
             - ./nginx/cert.pem:/etc/cert.pem
             - ./nginx/key.pem:/etc/key.pem
         networks:
             - laravel
+        environment:
+          - APP_ENV=${APP_ENV:-dev}
+        command: /bin/sh -c "envsubst '$$APP_ENV' < /etc/nginx/nginx_$$APP_ENV.conf > /etc/nginx/nginx.conf && exec nginx -g 'daemon off;'"
 
     node:
         container_name: node

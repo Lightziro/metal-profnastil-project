@@ -3,6 +3,7 @@
 namespace App\Orchid\Screens;
 
 use App\Models\Order;
+use App\Models\Question;
 use Orchid\Screen\Screen;
 use Orchid\Support\Facades\Layout;
 
@@ -12,8 +13,8 @@ class StatsScreen extends Screen
     {
         $ordersToday = Order::query()->where('created_at', '>', now()->startOfDay())->count();
         $ordersWeek = Order::query()->where('created_at', '>', now()->startOfWeek())->count();
-        $questionsToday = Order::query()->where('created_at', '>', now()->startOfDay())->count();
-        $questionsWeek = Order::query()->where('created_at', '>', now()->startOfWeek())->count();
+        $questionsToday = Question::query()->where('created_at', '>', now()->startOfDay())->count();
+        $questionsWeek = Question::query()->where('created_at', '>', now()->startOfWeek())->count();
         return [
             'metrics' => [
                 'ordersToday'    => ['value' => $ordersToday],
