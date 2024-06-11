@@ -44,28 +44,30 @@ services:
         tty: true
         depends_on:
             - php-app
-        environment:
-            - NGINX_PORT=8080
+        #environment:
+        #    - NGINX_PORT=8080
         ports:
             - "80:80"
             - "443:443"
         volumes:
             - ../:/var/www
-            - ./nginx/config/conf.d/nginx.conf:/etc/nginx/conf.d/default.conf
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+           # - ./nginx/cert.pem:/etc/cert.pem
+           # - ./nginx/key.pem:/etc/key.pem
         networks:
             - laravel
 
-    node:
-        container_name: node
-        image: "node:14"
-        restart: unless-stopped
-        user: "node"
-        working_dir: /var/www/nextjs
-        tty: true
-        ports:
-            - "80:3000"
-        volumes:
-            - ../:/var/www/
+#    node:
+#        container_name: node
+#        image: "node:14"
+#        restart: unless-stopped
+#        user: "node"
+#        working_dir: /var/www/nextjs
+#        tty: true
+#        ports:
+#            - "80:3000"
+#        volumes:
+#            - ../:/var/www/
     certbot:
       ports:
         - "6000:80"
