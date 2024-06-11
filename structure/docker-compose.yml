@@ -68,17 +68,17 @@ services:
             - "3000:3000"
         volumes:
             - ../:/var/www/
-    certbot:
-      ports:
-        - "6000:80"
-      volumes:
-        - ./nginx/:/etc/nginx/
-      build:
-        context: ./certbot
-        dockerfile: Dockerfile
-        args:
-          DOMAIN_EMAIL: 'proflist43@yandex.ru'
-          DOMAIN_URL: 'kirovprofnastil.ru'
+#    certbot:
+#      ports:
+#        - "6000:80"
+#      volumes:
+#        - ./nginx/:/etc/nginx/
+#      build:
+#        context: ./certbot
+#        dockerfile: Dockerfile
+#        args:
+#          DOMAIN_EMAIL: 'proflist43@yandex.ru'
+#          DOMAIN_URL: 'kirovprofnastil.ru'
 
 networks:
     laravel:
