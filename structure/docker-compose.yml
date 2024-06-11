@@ -57,17 +57,17 @@ services:
         networks:
             - laravel
 
-#    node:
-#        container_name: node
-#        image: "node:14"
-#        restart: unless-stopped
-#        user: "node"
-#        working_dir: /var/www/nextjs
-#        tty: true
-#        ports:
-#            - "80:3000"
-#        volumes:
-#            - ../:/var/www/
+    node:
+        container_name: node
+        image: "node:14"
+        restart: unless-stopped
+        user: "node"
+        working_dir: /var/www/nextjs
+        tty: true
+        ports:
+            - "3000:3000"
+        volumes:
+            - ../:/var/www/
     certbot:
       ports:
         - "6000:80"
