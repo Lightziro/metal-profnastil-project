@@ -50,7 +50,7 @@ const ModalForm: React.FC<ModalForm> = ({open, onClose, itemSelected, typeItem, 
             formik.setFieldValue('entityType', typeItem);
         }
     }, [itemSelected, typeItem]);
-    const findItem = entityList.find(item => item.id == formik.values.entityId);
+    const findItem = entityList.find(item => item.id == Number(formik.values.entityId));
 
     const fieldError = (field: string) => {
         return formik.errors[field] && formik.touched[field] ? formik.errors[field] : null

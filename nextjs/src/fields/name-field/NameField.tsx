@@ -22,7 +22,7 @@ const NameField: React.FC<NameField> = ({countItems = 3, name, handleChange, cla
     const onChangeHandler = (data: DaDataSuggestion<DaDataFio>) => {
         handleChange(name, data.value)
     }
-    const onChangeInput = (event: React.FormEvent<HTMLInputElement>) => {
+    const onChangeInput = (event: any) => {
         handleChange(name, event.target.value)
     }
 
