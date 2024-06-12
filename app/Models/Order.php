@@ -8,7 +8,7 @@ use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
 /**
- * @property string $name
+ * @property string $full_name
  * @property string|null $phone
  * @property string|null $email
  * @property string $comment

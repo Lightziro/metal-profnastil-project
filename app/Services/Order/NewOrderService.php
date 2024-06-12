@@ -1,26 +1,23 @@
 <?php
+
 namespace App\Services\Order;
+
 use App\Http\Request\OrderRequest;
-use App\Http\Request\QuestionRequest;
-use App\Models\Question;
+use App\Jobs\SendOrderToEmail;
+use App\Models\Order;
 use App\Repository\OrderRepository;
-use App\Repository\QuestionRepository;
-use App\Services\MailService;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\View;
+
 
 class NewOrderService
 {
-    public function __construct(
-        readonly private OrderRepository $orderRepository,
-        readonly private MailService $mailService
-    ) {
+    public function __construct(readonly private OrderRepository $orderRepository,)
+    {
     }
 
     public function execute(OrderRequest $request)
     {
         $order = $this->orderRepository->newOrder($this->prepareToModel($request));
+        $this->sendOrderToEmail($order);
         return $order;
     }
 
@@ -36,18 +33,8 @@ class NewOrderService
         ];
     }
 
-    public function sendQuestionToEmail(Question $question)
+    public function sendOrderToEmail(Order $order)
     {
-        $listStaff = config('contacts.send_question_email', []);
-        $messageSubject = "Новый вопрос от '{$question->name}'";
-
-        foreach ($listStaff as $staffEmail) {
-            try {
-                $body = View::make('questionTemplateEmail')->render();
-                $this->mailService->sendMail($staffEmail, $messageSubject, $body);
-            } catch (\Exception $e) {
-                Log::error($e->getMessage(), [$e]);
-            }
-        }
+        SendOrderToEmail::dispatch($order);
     }
 }

@@ -23,10 +23,10 @@
                                             <tr>
                                                 <td align="center"
                                                     style="border-collapse:collapse;font-size:0px;padding:0 0px 0px 0px;word-break:break-word">
-                                                    <a href="http://a0551954.xsph.ru">
+                                                    <a href="https://kirovprofnastil.ru">
                                                         <img width="550"
                                                              style="border:0;display:block;height:auto;line-height:100%;text-decoration:none"
-                                                             src="http://a0551954.xsph.ru/image/logo.png" alt="Логотип компании">
+                                                             src="https://kirovprofnastil.ru/logo.png" alt="Логотип компании">
                                                     </a>
                                                 </td>
                                             </tr>
@@ -218,7 +218,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Клиент: </strong><span
-                                                                style="color: black">{{ $nameClient ?? '' }}</span>
+                                                                style="color: black">{{ $question->name ?? '' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -226,7 +226,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Почта: </strong><span
-                                                                style="color: black">{{ $emailClient ?? '' }}</span>
+                                                                style="color: black">{{ $question->email ?? 'Не указано' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -234,7 +234,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Телефон: </strong><span
-                                                                style="color: black">{{ $phoneClient ?? '' }}</span>
+                                                                style="color: black">{{ $question->phone ?? 'Не указано' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -242,7 +242,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Комментарий: </strong><span
-                                                                style="color: black">{{$commentClient ?? ''}}</span>
+                                                                style="color: black">{{$question->comment ?? 'Не указано'}}</span>
                                                     </div>
                                                 </td>
                                             </tr>

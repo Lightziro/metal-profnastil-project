@@ -1,3 +1,8 @@
+<?php
+use App\Models\Order;
+/** @var Order $order */
+$productData = data_get($order, 'entity.name');
+?>
 <table bgcolor="#f1f1f1" width="100%" style="background-color:#f1f1f1;min-width:600px">
     <tbody>
     <tr>
@@ -23,10 +28,10 @@
                                             <tr>
                                                 <td align="center"
                                                     style="border-collapse:collapse;font-size:0px;padding:0 0px 0px 0px;word-break:break-word">
-                                                    <a href="http://a0551954.xsph.ru">
+                                                    <a href="https://kirovprofnastil.ru">
                                                         <img width="550"
                                                              style="border:0;display:block;height:auto;line-height:100%;text-decoration:none"
-                                                             src="http://a0551954.xsph.ru/image/logo.png" alt="Логотип компании">
+                                                             src="https://kirovprofnastil.ru/logo.png" alt="Логотип компании">
                                                     </a>
                                                 </td>
                                             </tr>
@@ -63,7 +68,7 @@
                                                     style="color:#313131;font-family:'arial' , 'helvetica' , sans-serif;font-size:16px;line-height:24px;text-align:left">
                                                     <div style="line-height:24px;text-align:center">
                                                     <span style="font-size:18px">
-                                                    <p>Здравствуйте, пришёл новый заказ от клиента</p>
+                                                    <p>Здравствуйте, пришёл новый запрос от клиента</p>
                                                     </span>
                                                     </div>
                                                 </td>
@@ -145,28 +150,9 @@
                                                         <tr>
                                                             <td align="center">
                                                                 <div style="color:#313131;font-family:'ariel' , 'helvetica' , sans-serif;font-size:16px;line-height:24px;text-align:left">
-                                                                    <strong>Дата составления вопроса:</strong><br>
-                                                                    {{ $dateQuestion }}<br>
+                                                                    <strong>Дата составления запроса:</strong><br>
+                                                                    {{ now()->format('Y-m-d') }}<br>
                                                                 </div>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <table align="right" border="0" cellpadding="0" cellspacing="0"
-                                                           width="270" style="min-width:270px">
-                                                        <tbody>
-                                                        <tr>
-                                                            <td align="center">
-                                                                <div style="color:#313131;font-family:'ariel' , 'helvetica' , sans-serif;font-size:16px;line-height:24px;text-align:left">
-                                                                    <strong>Полная стоимость заказа:</strong><br>
-                                                                    {{$fullPrice}} руб.<br>
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                        <tr height="1">
-                                                            <td height="1"
-                                                                width="100%" style="font-size:1px;line-height:1px">
-                                                                &nbsp;
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -217,8 +203,8 @@
                                             <tr>
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
-                                                        <strong style="color: black">Заказчик: </strong><span
-                                                                style="color: black">{{ $nameClient }}</span>
+                                                        <strong style="color: black">ФИО клиента: </strong><span
+                                                                style="color: black">{{ $order->full_name }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -226,7 +212,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Email адрес: </strong><span
-                                                                style="color: black">{{ $emailClient }}</span>
+                                                                style="color: black">{{ $order->email ?: 'Не указано' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -234,7 +220,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Телефон: </strong><span
-                                                                style="color: black">{{ $phoneClient }}</span>
+                                                                style="color: black">{{ $order->phone ?: 'Не указано' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -242,7 +228,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <strong style="color: black">Комментарий: </strong><span
-                                                                style="color: black">{{$commentClient}}</span>
+                                                                style="color: black">{{$order->comment ?: 'Не указано'}}</span>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -291,7 +277,7 @@
                                                 <td style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;line-height:24px;text-align:left;">
                                                     <div style="color:#b2b2b2;font-family:'arial' , 'helvetica' , sans-serif;font-size:14px;text-align:left">
                                                         <span
-                                                            style="color: black">{{ $productData }}</span>
+                                                            style="color: black">{{ $productData ?: 'Не известно' }}</span>
                                                     </div>
                                                 </td>
                                             </tr>
