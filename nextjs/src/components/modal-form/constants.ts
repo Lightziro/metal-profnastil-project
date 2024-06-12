@@ -12,6 +12,5 @@ export const defaultFormOrder: FormOrder = {
     entityType: '',
     fullName: '',
     phone: '',
-    email: '',
     comment: '',
 }

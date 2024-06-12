@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
 
 /**
  * @property string $name
@@ -13,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  */
 class Order extends Model
 {
+    use AsSource, Filterable;
     protected $fillable = [
         'entity_type',
         'entity_id',

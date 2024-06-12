@@ -15,7 +15,7 @@ class OrderRequest extends FormRequest
             'fullName' => 'string|min:0|max:255',
             'phone' => 'nullable|string',
             'email' => 'nullable|string',
-            'comment' => 'nullable|string|min:10',
+            'comment' => 'nullable|string|min:4',
         ];
     }
 }

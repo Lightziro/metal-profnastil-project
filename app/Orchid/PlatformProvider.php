@@ -30,6 +30,13 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('monitor')
                 ->route('platform.stats')
                 ->title('Статистика'),
+            Menu::make('Вопросы с сайта')
+                ->icon('note')
+                ->route('platform.questions.index'),
+
+            Menu::make('Заявки с сайта')
+                ->icon('note')
+                ->route('platform.orders.index'),
 //                ->badge(function () {
 //                    return 6;
 //                }),

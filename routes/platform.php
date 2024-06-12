@@ -8,9 +8,10 @@ use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsScreen;
 use App\Orchid\Screens\Examples\ExampleLayoutsScreen;
-use App\Orchid\Screens\Examples\ExampleScreen;
 use App\Orchid\Screens\Examples\ExampleTextEditorsScreen;
+use App\Orchid\Screens\Order\OrderListScreen;
 use App\Orchid\Screens\PlatformScreen;
+use App\Orchid\Screens\Question\QuestionListScreen;
 use App\Orchid\Screens\Role\RoleEditScreen;
 use App\Orchid\Screens\Role\RoleListScreen;
 use App\Orchid\Screens\StatsScreen;
@@ -112,6 +113,22 @@ Route::screen('categories', CategoryListScreen::class)
         return $trail
             ->parent('platform.index')
             ->push('Категории');
+    });
+
+Route::screen('questions', QuestionListScreen::class)
+    ->name('platform.questions.index')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push('Вопросы');
+    });
+
+Route::screen('orders', OrderListScreen::class)
+    ->name('platform.orders.index')
+    ->breadcrumbs(function (Trail $trail) {
+        return $trail
+            ->parent('platform.index')
+            ->push('Заявки с сайта');
     });
 
 Route::screen('example-fields', ExampleFieldsScreen::class)->name('platform.example.fields');

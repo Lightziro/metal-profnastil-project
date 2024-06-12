@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Orchid\Filters\Filterable;
+use Orchid\Screen\AsSource;
 
 /**
  * @property string $name
@@ -12,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Question extends Model
 {
+    use AsSource, Filterable;
     protected $fillable = [
         'name',
         'phone',

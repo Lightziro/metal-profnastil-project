@@ -16,7 +16,7 @@ class OrderController extends Controller
     public function newOrder(OrderRequest $request, NewOrderService $newOrderService)
     {
         $order = $newOrderService->execute($request);
-        return $order;
+        return response()->json();
     }
 
 	public function addOrder(Request $request)

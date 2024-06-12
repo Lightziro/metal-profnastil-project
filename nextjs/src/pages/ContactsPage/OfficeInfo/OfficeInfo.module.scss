@@ -14,3 +14,19 @@
     border-radius: 25px;
     color: #383838;
 }
+
+.contactBlock {
+
+}
+@media screen and (max-width: 768px) {
+    .contactBlock {
+        flex-wrap: wrap;
+        margin-top: 30px;
+        .pictureBlock {
+            order: 1;
+        }
+    }
+    .mainTitle {
+        display: none;
+    }
+}

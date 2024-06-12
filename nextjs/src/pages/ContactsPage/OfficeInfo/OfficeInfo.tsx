@@ -5,9 +5,9 @@ import {featuresList, phoneList} from "./constants";
 const OfficeInfo = () => {
     return (
         <div className='container plr-30'>
-            <h2>Наш офис</h2>
-            <div className='flex gap30'>
-                <div className={'w100'}>
+            <h2 className={styles.mainTitle}>Наш офис</h2>
+            <div className={cn('flex gap30', styles.contactBlock)}>
+                <div className={cn('w100', styles.pictureBlock)}>
                     <img className={styles.pictureOffice} src='/images/office.png'/>
                 </div>
                 <div className='w100 direction gap10'>

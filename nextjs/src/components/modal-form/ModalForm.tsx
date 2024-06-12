@@ -30,6 +30,7 @@ const ModalForm: React.FC<ModalForm> = ({open, onClose, itemSelected, typeItem, 
             switch (data.status) {
                 case 200:
                     setLoading(false);
+                    alert('Ваша заявка принята, скоро с вами свяжется наш сотрудник');
                     onClose();
                     break;
                 case 400:

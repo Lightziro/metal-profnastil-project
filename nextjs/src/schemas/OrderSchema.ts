@@ -7,5 +7,5 @@ export const OrderSchema = Yup.object().shape({
     comment: Yup.string()
         .min(2, 'Too Short!')
         .max(50, 'Too Long!'),
-    email: Yup.string().email('Некорректный email').required('Обязательное поле'),
+    phone: Yup.string().required('Обязательное поле'),
 });

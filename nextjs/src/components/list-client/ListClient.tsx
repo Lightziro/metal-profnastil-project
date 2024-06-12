@@ -8,7 +8,7 @@ export default function ClientListMainPage() {
             <h2 className={styles.textTitle}>Наши клиенты</h2>
             <div className={styles.wrapperList}>
                 {clientList.map((object, index) => <img key={index}
-                                                        src={`${process.env.API_URL}/${object.img}`}
+                                                        src={`/${object.img}`}
                                                         className={styles.clientPicture}
                                                         title={object.name}
                     />
