@@ -12,7 +12,7 @@ interface MainPageContent {
 const MainPageContent: React.FC<MainPageContent> = ({categories}) => {
     return (
         <div>
-            <HeadLayout title='Кировский завод металлопрофиля - Главная'/>
+            <HeadLayout title='Кировский завод металлопрофиля - Главная' keyWords='киров профнастил, профнастил, профнастил цена, заборы из профнастила, металлочерепица, кровля, заборы киров, крыша' description='Продажа профнастила в г.Киров и по Кировской области по низким ценам'/>
             <Header/>
             <HeaderMainPage></HeaderMainPage>
             <ListCategories categories={categories}/>

@@ -8,7 +8,7 @@ import OfficeInfo from "./OfficeInfo/OfficeInfo";
 const ContactsPage = () => {
     return (
         <div>
-            <HeadLayout title='Кировский завод металлопрофиля - Контакты'/>
+            <HeadLayout title='Кировский завод металлопрофиля - Контакты' keyWords='киров профнастил, профнастил, профнастил цена, заборы из профнастила, металлочерепица, кровля, заборы киров, крыша' description='Продажа профнастила в г.Киров и по Кировской области по низким ценам'/>
             <Header></Header>
             <WorkTime/>
             <OfficeInfo/>
