@@ -6,7 +6,7 @@ const YandexMetric = () => {
     const pathName = usePathname();
     const searchParams = useSearchParams();
     useEffect(() => {
-        ym(process.env.YANDEX_METRIC, "hit", window.location.href);
+        ym(process.env.NEXT_PUBLIC_YANDEX_METRIC, "hit", window.location.href);
     }, [pathName, searchParams]);
     return null;
 }

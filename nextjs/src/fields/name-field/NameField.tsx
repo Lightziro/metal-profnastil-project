@@ -27,7 +27,7 @@ const NameField: React.FC<NameField> = ({countItems = 3, name, handleChange, cla
     }
 
     return (
-        <FioSuggestions token={process.env.DADATA_KEY}
+        <FioSuggestions token={process.env.NEXT_PUBLIC_DADATA_KEY}
                         inputProps={{
                             className: cn('field', {'fieldError': error}),
                             autoComplete: 'off',

@@ -7,7 +7,7 @@ const WorkTime = () => {
         <div className='container plr-30'>
             <h1 className={styles.title}>Режим работы офиса</h1>
             <div className={styles.workList}>
-                {workTime.map(item => (<div className={cn(styles.workBlock, {[styles.disabled]: item?.disabled})}>
+                {workTime.map(item => (<div key={item.day} className={cn(styles.workBlock, {[styles.disabled]: item?.disabled})}>
                     <div className={styles.day}>{item.day}</div>
                     <span className={styles.subTitle}>{item.time}</span>
                 </div>))}
