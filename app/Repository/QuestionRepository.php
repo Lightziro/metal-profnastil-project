@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class QuestionRepository
 {
-    public function newQuestion(QuestionRequest $request): Model
+    public function newQuestion(QuestionRequest $request): Model|Question
     {
         return Question::query()->create($request->all());
     }

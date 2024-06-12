@@ -1,6 +1,7 @@
 <?php
 namespace App\Services\Question;
 use App\Http\Request\QuestionRequest;
+use App\Jobs\SendQuestionToEmail;
 use App\Models\Question;
 use App\Models\User;
 use App\Notifications\NewQuestion;
@@ -28,19 +29,7 @@ class NewQuestionService
 
     public function sendQuestionToEmail(Question $question)
     {
-        $listStaff = config('contacts.send_question_email', []);
-        $messageSubject = "Новый вопрос от '{$question->name}'";
-
-        foreach ($listStaff as $staffEmail) {
-//            try {
-//                $body = View::make('questionTemplateEmail')->render();
-//                $this->mailService->sendMail($staffEmail, $messageSubject, $body);
-//            } catch (\Exception $e) {
-//                Log::error($e->getMessage(), [$e]);
-//            }
-
-
-        }
+        SendQuestionToEmail::dispatch($question);
     }
 
     public function sendNotifyUsers(Question $question)
