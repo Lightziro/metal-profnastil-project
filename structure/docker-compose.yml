@@ -61,7 +61,7 @@ services:
 
     node:
         container_name: node
-        image: "node:14"
+        image: "node:18"
         restart: unless-stopped
         user: "node"
         working_dir: /var/www/nextjs

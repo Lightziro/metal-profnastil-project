@@ -8,9 +8,9 @@ import Link from "next/link";
 export default function Navigator() {
     return (
         <div className='container'>
-            <div className={styles.headerWrapper}>
+            <nav className={styles.headerWrapper}>
                 {navItem.map((object, index) => (<NavItem {...object} key={index}/>))}
-            </div>
+            </nav>
         </div>
     );
 }
@@ -18,12 +18,10 @@ export default function Navigator() {
 const NavItem = (props) => {
     const router = useRouter();
     return (
-        <Link href={props.path} passHref>
-            <div className={cn(styles.navLink, {
-                [styles.active]: router.pathname === props.path
-            })}>
-                {props.title}
-            </div>
+        <Link className={cn(styles.navLink, {
+            [styles.active]: router.pathname === props.path
+        })} href={props.path} passHref>
+            {props.title}
         </Link>
     )
 }

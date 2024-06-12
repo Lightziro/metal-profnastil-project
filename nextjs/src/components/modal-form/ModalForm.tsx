@@ -1,4 +1,3 @@
-import {Dialog} from "@material-ui/core";
 import React, {useEffect} from "react";
 import {useFormik} from "formik";
 import {defaultFormOrder} from "./constants";
@@ -10,6 +9,7 @@ import {createOrder} from "../../server/client-api";
 import {OrderSchema} from "../../schemas/OrderSchema";
 import PhoneInputMask from "../../fields/Mask/PhoneInputMask/PhoneInputMask";
 import TextAreaField from "../../fields/textarea-field/TextAreaField";
+import {Dialog} from "@mui/material";
 
 interface ModalForm {
     open: boolean,
