@@ -3,7 +3,20 @@
     gap: 15px;
     justify-content: center;
     align-content: center;
-    margin: 20px 0;
+}
+.logoWrapper {
+    width: 30%;
+}
+
+.navWrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 .navLink {
@@ -14,6 +27,7 @@
     background-color: transparent;
     border-radius: 5px;
     cursor: pointer;
+
     &.active {
         color: white;
         background-color: #007dfd;

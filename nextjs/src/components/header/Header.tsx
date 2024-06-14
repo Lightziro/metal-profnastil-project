@@ -7,7 +7,12 @@ import Link from "next/link";
 
 export default function Navigator() {
     return (
-        <div className='container'>
+        <div className={cn('container', styles.navWrapper)}>
+            <div className={styles.logoWrapper}>
+                <Link href='/'>
+                    <img className={styles.logo} alt='Логотип' src='/main-logo.png'/>
+                </Link>
+            </div>
             <nav className={styles.headerWrapper}>
                 {navItem.map((object, index) => (<NavItem {...object} key={index}/>))}
             </nav>

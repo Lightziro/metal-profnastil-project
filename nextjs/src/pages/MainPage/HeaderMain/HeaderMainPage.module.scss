@@ -1,15 +1,44 @@
 .mastHead {
-    padding: 48px 30px;
+    padding: 48px 0;
     position: relative;
     background-color: #007bff;
-    z-index: 0
+    z-index: 0;
+    &:after {
+        background-color: red;
+        width: 100%;
+        position: absolute;
+        height: 40px;
+        display: inline;
+    }
+}
+.headerBackTop {
+    background-color: #007bff;
+    padding-top: 48px;
+    z-index: 0;
+    position: relative;
+    padding-bottom: 24px;
+}
+.headerBottom {
+    background-color: #007bff;
+    padding-bottom: 48px;
+    z-index: 0;
+    position: relative;
+    padding-top: 24px;
+}
+.headerCenter {
+    background-color: #fe5353;
+    color: white;
 }
 
 .mainTitle {
     color: white;
     font-size: 60px;
     font-weight: 300;
-    margin-bottom: 24px;
+    margin-top: 0;
+}
+.companyTitle {
+    padding: 10px 0;
+    font-size: 32px;
 }
 
 .subTitle {

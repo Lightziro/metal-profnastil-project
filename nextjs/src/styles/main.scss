@@ -72,3 +72,10 @@ body {
     position: relative;
     width: 100%;
 }
+@media (max-width: 1279px) {
+    .container {
+        max-width: 100%;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+}

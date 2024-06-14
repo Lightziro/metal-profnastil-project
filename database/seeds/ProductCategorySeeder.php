@@ -20,6 +20,10 @@ class ProductCategorySeeder extends Seeder
                 'slug' => 'prof_list'
             ],
             [
+                'name' => 'Доборные элементы',
+                'slug' => 'additional_element'
+            ],
+            [
                 'name' => 'Металочерепица',
                 'slug' => 'metal_list'
             ],
@@ -30,7 +34,7 @@ class ProductCategorySeeder extends Seeder
             [
                 'name' => 'Саморезы',
                 'slug' => 'screw'
-            ]
+            ],
         ];
         foreach ($categories as $category) {
             ProductCategory::query()->firstOrCreate($category);

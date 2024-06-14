@@ -1,22 +1,36 @@
 import React from 'react';
 import styles from './HeaderMainPage.module.scss';
+import cn from 'classnames'
 
 export default function HeaderMainPage() {
 
     return (
-        <div className={styles.mastHead}>
-            <div className='container'>
-                <h1 className={styles.mainTitle}>
-                    Кировский завод металлопрофиля
-                </h1>
-                <div className={styles.subTitle}>
-                    Компания занимается производством профнастила с 2003 года по текущий год и
-                    имеет
-                    огромную
-                    базу клиентов. Мы производим продукцию с полимерным покрытием, которая соответствует
-                    международной системе RAL
+        <>
+            <div className={styles.headerBackTop}>
+                <div className='container'>
+                    <h1 className={styles.mainTitle}>
+                        Кировский завод металлопрофиля
+                    </h1>
                 </div>
             </div>
-        </div>
+            <div className={styles.headerCenter}>
+                <div className='container'>
+                    <div className={styles.companyTitle}>
+                        ООО ПКП "Автосвет"
+                    </div>
+                </div>
+            </div>
+            <div className={styles.headerBottom}>
+                <div className='container'>
+                    <div className={styles.subTitle}>
+                        Компания работает на рынке более 20 лет, занимает прочные позиции в сегменте производства и
+                        поставок
+                        кровельных материалов в Кирове и за пределами области. Мы зарекомендовали себя как надежный
+                        партнер,
+                        предоставляющий качественные товары в короткие сроки.
+                    </div>
+                </div>
+            </div>
+        </>
     );
 }
