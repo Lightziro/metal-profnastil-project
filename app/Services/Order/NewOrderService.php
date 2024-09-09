@@ -2,7 +2,7 @@
 
 namespace App\Services\Order;
 
-use App\Http\Request\OrderRequest;
+use App\Http\DataTransferObject\NewOrderData;
 use App\Jobs\SendOrderToEmail;
 use App\Models\Order;
 use App\Repository\OrderRepository;
@@ -10,27 +10,23 @@ use App\Repository\OrderRepository;
 
 class NewOrderService
 {
-    public function __construct(readonly private OrderRepository $orderRepository,)
+    public function __construct(readonly private OrderRepository $orderRepository)
     {
     }
 
-    public function execute(OrderRequest $request)
+    public function create(NewOrderData $orderData)
     {
-        $order = $this->orderRepository->newOrder($this->prepareToModel($request));
+        $order = new Order();
+        $order->setEntityType($orderData->getEntityType());
+        $order->setEntityId($orderData->getEntityId());
+        $order->setFullName($orderData->getFullName());
+        $order->setEmail($orderData->getEmail());
+        $order->setComment($orderData->getComment());
+        $order->setPhone($orderData->getPhone());
+        $this->orderRepository->save($order);
+
         $this->sendOrderToEmail($order);
         return $order;
-    }
-
-    private function prepareToModel(OrderRequest $request): array
-    {
-        return [
-            'entity_type' => $request->entityType,
-            'entity_id' => $request->entityId,
-            'full_name' => $request->fullName,
-            'phone' => $request->phone,
-            'email' => $request->email,
-            'comment' => $request->comment,
-        ];
     }
 
     public function sendOrderToEmail(Order $order)

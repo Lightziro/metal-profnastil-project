@@ -53,6 +53,7 @@ services:
             - ./nginx/nginx_prod.conf:/etc/nginx/nginx_prod.conf:ro
             - ./nginx/cert.pem:/etc/cert.pem
             - ./nginx/key.pem:/etc/key.pem
+            - ./nginx/logs:/var/log/nginx
         networks:
             - laravel
         environment:

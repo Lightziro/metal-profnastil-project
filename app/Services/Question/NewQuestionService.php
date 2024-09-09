@@ -1,27 +1,28 @@
 <?php
 namespace App\Services\Question;
-use App\Http\Request\QuestionRequest;
+use App\Http\DataTransferObject\NewQuestionData;
 use App\Jobs\SendQuestionToEmail;
 use App\Models\Question;
 use App\Models\User;
 use App\Notifications\NewQuestion;
 use App\Repository\QuestionRepository;
-use App\Services\MailService;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\View;
 
 class NewQuestionService
 {
     public function __construct(
         readonly private QuestionRepository $questionRepository,
-        readonly private MailService $mailService
     ) {
     }
 
-    public function execute(QuestionRequest $request)
+    public function create(NewQuestionData $questionData)
     {
-        $question = $this->questionRepository->newQuestion($request);
+        $question = new Question();
+        $question->setName($questionData->getName());
+        $question->setPhone($questionData->getPhone());
+        $question->setEmail($questionData->getEmail());
+        $question->setComment($questionData->getComment());
+        $question = $this->questionRepository->save($question);
+
         $this->sendQuestionToEmail($question);
         $this->sendNotifyUsers($question);
         return $question;

@@ -34,7 +34,7 @@ class SendQuestionToEmail implements ShouldQueue
     {
         try {
             $listStaff = config('contacts.send_to_email', []);
-            $body = View::make('questionTemplateEmail', [
+            $body = View::make('new-question', [
                 'question' => $this->question,
             ])->render();
 

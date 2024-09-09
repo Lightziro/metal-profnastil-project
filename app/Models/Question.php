@@ -21,4 +21,26 @@ class Question extends Model
         'email',
         'comment',
     ];
+
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    public function setPhone(string|null $phone): void
+    {
+        $this->phone = $phone;
+    }
+
+    public function setEmail(string|null $email): void
+    {
+        $this->email = $email;
+    }
+
+    public function setComment(string|null $comment): void
+    {
+        $this->comment = $comment;
+    }
+
+
 }

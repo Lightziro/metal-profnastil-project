@@ -8,6 +8,8 @@ use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
 /**
+ * @property string $entity_type
+ * @property int|null $entity_id
  * @property string $full_name
  * @property string|null $phone
  * @property string|null $email
@@ -30,10 +32,41 @@ class Order extends Model
         return $this->morphTo();
     }
 
-    public function setEntityTypeAttribute($value)
+    public function setEntityType(string $entityType): void
+    {
+        $this->entity_type = $entityType;
+    }
+
+    public function setEntityId(int $entityId): void
+    {
+        $this->entity_id = $entityId;
+    }
+
+    public function setFullName(string $fullName): void
+    {
+        $this->full_name = $fullName;
+    }
+
+    public function setPhone(?string $phone): void
+    {
+        $this->phone = $phone;
+    }
+
+    public function setEmail(?string $email): void
+    {
+        $this->email = $email;
+    }
+
+    public function setComment(string $comment): void
+    {
+        $this->comment = $comment;
+    }
+
+    public function setEntityTypeAttribute($value): void
     {
         $this->attributes['entity_type'] = match ($value) {
             'category' => ProductCategory::class,
+            'product' => Product::class,
         };
     }
 }

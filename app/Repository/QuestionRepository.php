@@ -1,14 +1,11 @@
 <?php
 namespace App\Repository;
 
-use App\Http\Request\QuestionRequest;
+use App\Common\Abstract\Repository;
 use App\Models\Question;
 use Illuminate\Database\Eloquent\Model;
 
-class QuestionRepository
+class QuestionRepository extends Repository
 {
-    public function newQuestion(QuestionRequest $request): Model|Question
-    {
-        return Question::query()->create($request->all());
-    }
+    protected string|Model $model = Question::class;
 }

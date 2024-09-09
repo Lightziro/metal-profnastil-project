@@ -23,10 +23,10 @@
                                             <tr>
                                                 <td align="center"
                                                     style="border-collapse:collapse;font-size:0px;padding:0 0px 0px 0px;word-break:break-word">
-                                                    <a href="https://kirovprofnastil.ru">
+                                                    <a href="{{env('APP_URL')}}">
                                                         <img width="550"
                                                              style="border:0;display:block;height:auto;line-height:100%;text-decoration:none"
-                                                             src="https://kirovprofnastil.ru/logo.png" alt="Логотип компании">
+                                                             src="{{env('APP_URL')}}/logo.png" alt="Логотип компании">
                                                     </a>
                                                 </td>
                                             </tr>

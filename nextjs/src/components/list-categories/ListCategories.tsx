@@ -38,15 +38,15 @@ interface ItemCategory {
     handleOpenRequest: (category: Category) => void;
 }
 
-const ItemCategory = ({category, handleOpenRequest}) => {
+const ItemCategory: React.FC<ItemCategory> = ({category, handleOpenRequest}) => {
     const router = useRouter();
 
     const handleClick = () => {
-        if (!category.link) {
+        if (!category.products_count) {
             handleOpenRequest(category);
             return;
         }
-        router.push(category.link)
+        router.push(`/${category.url_slug}`);
     }
 
     return (<div className={styles.cardCategory}>
@@ -56,7 +56,7 @@ const ItemCategory = ({category, handleOpenRequest}) => {
         </div>
         <button
             onClick={handleClick}
-            className={cn('btn-primary', styles.btnRequest)}>{category.link ? 'Смотреть' : 'Оставить заявку'}</button>
+            className={cn('btn-primary', styles.btnRequest)}>{category.products_count ? 'Смотреть' : 'Оставить заявку'}</button>
     </div>)
 }
 export default ListCategories;

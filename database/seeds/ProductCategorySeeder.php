@@ -17,27 +17,38 @@ class ProductCategorySeeder extends Seeder
         $categories = [
             [
                 'name' => 'Профнастил',
-                'slug' => 'prof_list'
+                'slug' => 'prof_list',
+                'url_slug' => 'profnastil'
             ],
             [
                 'name' => 'Доборные элементы',
-                'slug' => 'additional_element'
+                'slug' => 'additional_element',
+                'url_slug' => 'dobornye-elementy'
             ],
             [
                 'name' => 'Металочерепица',
-                'slug' => 'metal_list'
+                'slug' => 'metal_list',
+                'url_slug' => 'metalocherepitsa'
             ],
             [
                 'name' => 'Гладкий лист',
-                'slug' => 'smooth_list'
+                'slug' => 'smooth_list',
+                'url_slug' => 'gladkiy-list'
             ],
             [
                 'name' => 'Саморезы',
-                'slug' => 'screw'
+                'slug' => 'screw',
+                'url_slug' => 'samorezy'
             ],
         ];
         foreach ($categories as $category) {
-            ProductCategory::query()->firstOrCreate($category);
+            $categoryModel = ProductCategory::query()->firstOrCreate(['slug' => $category['slug']]);
+            foreach ($category as $field => $value) {
+                if ($categoryModel->$field !== $value) {
+                    $categoryModel->$field = $value;
+                }
+            }
+            $categoryModel->save();
         }
     }
 }

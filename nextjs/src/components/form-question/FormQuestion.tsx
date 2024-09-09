@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import PhoneInputMask from "../../fields/Mask/PhoneInputMask/PhoneInputMask";
+import PhoneInputMask from "../../fields/mask-field/phone-input-mask/PhoneInputMask";
 import NameField from "../../fields/name-field/NameField";
 import TextAreaField from "../../fields/textarea-field/TextAreaField";
 import EmailField from "../../fields/email-field/EmailField";

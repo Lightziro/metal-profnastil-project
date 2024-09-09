@@ -26,6 +26,11 @@ Route::group(['prefix' => 'order'], function () {
 });
 Route::group(['prefix' => 'dictionary'], function () {
    Route::get('/categories', [DictionaryController::class, 'getCategories']);
+   Route::group(['prefix' => 'category'], function () {
+      Route::prefix('{category:url_slug}')->group(function () {
+         Route::get('/products', [DictionaryController::class, 'getProducts']);
+      });
+   });
 });
 
 Route::post('/order/person/new', 'OrderController@addOrder');

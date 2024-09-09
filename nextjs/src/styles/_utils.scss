@@ -39,6 +39,9 @@
     outline: none;
     font-size: 18px;
     cursor: pointer;
+    &:hover {
+        background-color: #0056b3;
+    }
     &:disabled {
         background-color: #ccc;
         cursor: not-allowed;
@@ -105,4 +108,16 @@
     background: none;
     border: none;
     text-align: left;
+}
+.js-image-zoom__zoomed-image {
+    z-index: 5000;
+    background-color: white;
+}
+@media screen and (max-width: 992px) {
+    .js-image-zoom__zoomed-image {
+        display: none !important;
+    }
+    .js-image-zoom__zoomed-area {
+        display: none !important;
+    }
 }

@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     libfann-dev\
     nodejs \
+#    supervisor \
     npm
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -33,6 +34,10 @@ RUN mkdir -p /home/$user/.composer && \
 
 COPY php.ini /usr/local/etc/php/
 
+#COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
 WORKDIR /var/www
 
 USER $user
+
+#CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

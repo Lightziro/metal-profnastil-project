@@ -2,12 +2,12 @@ import React, {useEffect} from "react";
 import {useFormik} from "formik";
 import {defaultFormOrder} from "./constants";
 import SelectField from "../../fields/select-field/SelectField";
-import {Category} from "../../types/item";
+import {Category, Product} from "../../types/item";
 import NameField from "../../fields/name-field/NameField";
 import styles from './ModalForm.module.scss';
 import {createOrder} from "../../server/client-api";
 import {OrderSchema} from "../../schemas/OrderSchema";
-import PhoneInputMask from "../../fields/Mask/PhoneInputMask/PhoneInputMask";
+import PhoneInputMask from "../../fields/mask-field/phone-input-mask/PhoneInputMask";
 import TextAreaField from "../../fields/textarea-field/TextAreaField";
 import {Dialog} from "@mui/material";
 
@@ -15,8 +15,8 @@ interface ModalForm {
     open: boolean,
     onClose: () => void,
     typeItem: string,
-    itemSelected: Category,
-    entityList: Category[]
+    itemSelected: Category|Product,
+    entityList: Category[]|Product[]|any
 }
 
 const ModalForm: React.FC<ModalForm> = ({open, onClose, itemSelected, typeItem, entityList}) => {
@@ -51,7 +51,7 @@ const ModalForm: React.FC<ModalForm> = ({open, onClose, itemSelected, typeItem, 
             formik.setFieldValue('entityType', typeItem);
         }
     }, [itemSelected, typeItem]);
-    const findItem = entityList.find(item => item.id == Number(formik.values.entityId));
+    const findItem = entityList.find((item: any) => item.id == Number(formik.values.entityId));
 
     const fieldError = (field: string) => {
         return formik.errors[field] && formik.touched[field] ? formik.errors[field] : null
