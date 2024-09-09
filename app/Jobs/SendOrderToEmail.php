@@ -27,7 +27,7 @@ class SendOrderToEmail implements ShouldQueue
     {
         try {
             $listStaff = config('contacts.send_to_email', []);
-            $body = View::make('orderTemplateEmail', [
+            $body = View::make('new-order', [
                 'order' => $this->order,
             ])->render();
 
