@@ -30,6 +30,7 @@ services:
         POSTGRES_DB: prof_list
       volumes:
         - ../structure/postgres/data:/var/lib/postgresql/data
+        - ../structure/dumps:/var/lib/postgresql/dumps
       ports:
         - "5432:5432"
       networks:
