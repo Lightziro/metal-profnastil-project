@@ -42,7 +42,7 @@ class ProductCategorySeeder extends Seeder
             ],
         ];
         foreach ($categories as $category) {
-            $categoryModel = ProductCategory::query()->firstOrCreate(['slug' => $category['slug']]);
+            $categoryModel = ProductCategory::query()->firstOrNew(['slug' => $category['slug']]);
             foreach ($category as $field => $value) {
                 if ($categoryModel->$field !== $value) {
                     $categoryModel->$field = $value;
