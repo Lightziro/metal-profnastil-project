@@ -35,7 +35,7 @@ const OfficeInfo = () => {
                             Безналичный расчет
                         </span>
                         <span className={styles.tag}>
-                            оплата картой
+                            Оплата картой
                         </span>
                     </div>
                 </div>

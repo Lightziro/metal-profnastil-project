@@ -4,10 +4,10 @@ export const navItem =
             title: 'Главная страница',
             path: '/',
         },
-        // {
-        //     title: 'Наши продукты',
-        //     path: '/product-list',
-        // },
+        {
+            title: 'Профнастил',
+            path: '/profnastil',
+        },
         {
             title: 'Контакты',
             path: '/contacts',

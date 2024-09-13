@@ -24,7 +24,7 @@ const NavItem = (props) => {
     const router = useRouter();
     return (
         <Link className={cn(styles.navLink, {
-            [styles.active]: router.pathname === props.path
+            [styles.active]: router.asPath === props.path
         })} href={props.path} passHref>
             {props.title}
         </Link>
