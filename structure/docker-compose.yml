@@ -18,7 +18,25 @@ services:
             - "host.docker.internal:host-gateway"
         environment:
             PHP_IDE_CONFIG: "serverName=Docker"
-
+    php-queue:
+      build:
+        context: ./php/queue
+      container_name: php-queue
+      command: php artisan horizon
+      depends_on:
+        - redis
+      volumes:
+        - ../:/var/www
+      networks:
+        - laravel
+    redis:
+      image: redis:7-alpine
+      volumes:
+        - redis-data:/bitnami/redis/data
+      ports:
+        - "${REDIS_PORT:-6379}:6379"
+      networks:
+        - laravel
     postgres:
       image: postgres:15
       container_name: postgres
@@ -88,3 +106,5 @@ services:
 
 networks:
     laravel:
+volumes:
+  redis-data:

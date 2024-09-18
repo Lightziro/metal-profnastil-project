@@ -13,7 +13,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+Route::get('/horizon/test', function () {
+    dd(321);
+});
 
 //Route::get('/', function () {
 //    return view('welcome');
