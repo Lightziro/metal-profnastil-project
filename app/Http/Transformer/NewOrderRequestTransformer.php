@@ -2,7 +2,6 @@
 
 namespace App\Http\Transformer;
 
-
 use App\Http\DataTransferObject\NewOrderData;
 use App\Http\Request\OrderRequest;
 

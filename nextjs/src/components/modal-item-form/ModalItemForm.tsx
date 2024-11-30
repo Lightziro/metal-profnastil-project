@@ -4,14 +4,14 @@ import {defaultFormOrder} from "./constants";
 import SelectField from "../../fields/select-field/SelectField";
 import {Category, Product} from "../../types/item";
 import NameField from "../../fields/name-field/NameField";
-import styles from './ModalForm.module.scss';
+import styles from './ModalItemForm.module.scss';
 import {createOrder} from "../../server/client-api";
 import {OrderSchema} from "../../schemas/OrderSchema";
 import PhoneInputMask from "../../fields/mask-field/phone-input-mask/PhoneInputMask";
 import TextAreaField from "../../fields/textarea-field/TextAreaField";
 import {Dialog} from "@mui/material";
 
-interface ModalForm {
+interface ModalItemForm {
     open: boolean,
     onClose: () => void,
     typeItem: string,
@@ -19,7 +19,7 @@ interface ModalForm {
     entityList: Category[]|Product[]|any
 }
 
-const ModalForm: React.FC<ModalForm> = ({open, onClose, itemSelected, typeItem, entityList}) => {
+const ModalForm: React.FC<ModalItemForm> = ({open, onClose, itemSelected, typeItem, entityList}) => {
     const [loading, setLoading] = React.useState<boolean>(false);
     const formik = useFormik({
         initialValues: defaultFormOrder,
@@ -56,42 +56,47 @@ const ModalForm: React.FC<ModalForm> = ({open, onClose, itemSelected, typeItem, 
     const fieldError = (field: string) => {
         return formik.errors[field] && formik.touched[field] ? formik.errors[field] : null
     }
+    if (!itemSelected) {
+        return null;
+    }
 
     return <Dialog
         open={open}
         onClose={onClose}
     >
         <img onClick={onClose} className={styles.iconClose} src='/icons/close.svg'/>
-        <form onSubmit={formik.handleSubmit} className={styles.modalWrapper}>
-            <div className={styles.formTitle}>
-                Заявка на {findItem?.name}
+        <div className={styles.modalWrapper}>
+            <div className={styles.infoContainer}>
+                <img className={styles.pictureItem} src={`/images/products/${itemSelected.slug}.png`}/>
             </div>
-            <div className={styles.formSubTitle}>Заполните информацию, и мы скоро свяжемся с вами</div>
-            <div className={styles.fieldsWrapper}>
-                <div>
-                    <div className='labelField required'>Интересуемый товар</div>
-                    <SelectField
-                        handleChange={formik.setFieldValue}
-                        options={entityList.map(item => ({value: item.id, label: item.name}))} name='entityId'
-                        value={formik.values.entityId}/>
+            <form className={styles.formContainer} onSubmit={formik.handleSubmit}>
+                <div className={styles.fieldsWrapper}>
+                    <div>
+                        <div className='labelField required'>Интересуемый товар</div>
+                        <SelectField
+                            handleChange={formik.setFieldValue}
+                            options={entityList.map(item => ({value: item.id, label: item.name}))} name='entityId'
+                            value={formik.values.entityId}/>
+                    </div>
+                    <div>
+                        <div className='labelField required'>Ваше имя</div>
+                        <NameField
+                            error={fieldError('fullName')}
+                            name='fullName' handleChange={formik.setFieldValue}/>
+                    </div>
+                    <div>
+                        <div className='labelField required'>Номер телефона</div>
+                        <PhoneInputMask name='phone' handleChange={formik.setFieldValue} value={formik.values.phone}/>
+                    </div>
+                    <div>
+                        <div className='labelField'>Комментарий</div>
+                        <TextAreaField withoutResize={true} name='comment' handleChange={formik.setFieldValue}
+                                       value={formik.values.comment}/>
+                    </div>
+                    <button disabled={loading} className='btn-primary'>Отправить заявку</button>
                 </div>
-                <div>
-                    <div className='labelField required'>Ваше имя</div>
-                    <NameField
-                        error={fieldError('fullName')}
-                        name='fullName' handleChange={formik.setFieldValue}/>
-                </div>
-                <div>
-                    <div className='labelField required'>Номер телефона</div>
-                    <PhoneInputMask name='phone' handleChange={formik.setFieldValue} value={formik.values.phone}/>
-                </div>
-                <div>
-                    <div className='labelField'>Комментарий</div>
-                    <TextAreaField withoutResize={true} name='comment' handleChange={formik.setFieldValue} value={formik.values.comment}/>
-                </div>
-                <button disabled={loading} className='btn-primary'>Отправить заявку</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </Dialog>
 }
 export default ModalForm;

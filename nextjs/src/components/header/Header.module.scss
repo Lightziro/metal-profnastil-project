@@ -8,6 +8,10 @@
     width: 30%;
 }
 
+.menuOpen {
+    display: block;
+}
+
 .navWrapper {
     display: flex;
     align-items: center;
@@ -17,6 +21,9 @@
         width: 35px;
         height: 35px;
     }
+}
+.burgerButton {
+    display: none;
 }
 
 .navLink {
@@ -32,5 +39,37 @@
         color: white;
         background-color: #007dfd;
         border-radius: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burgerButton {
+        display: block;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        font-size: 22px;
+    }
+    .navWrapper {
+        justify-content: space-between;
+    }
+
+    .headerWrapper {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: white;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .menuOpen {
+        display: flex;
+        gap: 5px;
+        background-color: #f4f4f4;
     }
 }

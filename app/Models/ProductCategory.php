@@ -10,10 +10,10 @@ use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
 /**
- * @property string $name
- * @property string $slug
- * @property string $url_slug
- * @property-read Product[]|Collection $products
+ * @property string               $name
+ * @property string               $slug
+ * @property string               $url_slug
+ * @property Product[]|Collection $products
  */
 class ProductCategory extends Model
 {

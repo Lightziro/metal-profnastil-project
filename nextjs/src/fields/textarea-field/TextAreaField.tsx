@@ -1,12 +1,14 @@
 import React from "react";
+import cn from 'classnames'
 interface TextAreaField {
     name: string,
     handleChange: (name: string, value: any) => void,
     classList?: string,
     value: string,
     placeHolder?: string,
+    withoutResize?: boolean
 }
-const TextAreaField: React.FC<TextAreaField> = ({name, handleChange, classList, value, placeHolder}) => {
+const TextAreaField: React.FC<TextAreaField> = ({name, handleChange, classList, value, placeHolder, withoutResize = false}) => {
 
     const onChangeInput = (event) => {
         event.persist()
@@ -14,7 +16,7 @@ const TextAreaField: React.FC<TextAreaField> = ({name, handleChange, classList, 
     }
 
     return (<textarea onChange={onChangeInput}
-                      className='field'
+                      className={cn('field', {['withoutResize']: withoutResize})}
                       value={value}
                       name={name}
                       placeholder={placeHolder}

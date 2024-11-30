@@ -2,7 +2,6 @@
 
 namespace App\Http\Transformer;
 
-
 use App\Http\DataTransferObject\NewQuestionData;
 use App\Http\Request\QuestionRequest;
 

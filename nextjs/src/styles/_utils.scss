@@ -29,6 +29,9 @@
 .mt-20 {
     margin-top: 20px !important;
 }
+.w-200px {
+    width: 200px;
+}
 
 .btn-primary {
     color: white;
@@ -39,12 +42,17 @@
     outline: none;
     font-size: 18px;
     cursor: pointer;
+    text-decoration: none;
     &:hover {
         background-color: #0056b3;
     }
     &:disabled {
         background-color: #ccc;
         cursor: not-allowed;
+    }
+    &.white {
+        background-color: white;
+        color: #0056b3;
     }
 }
 .labelField {
@@ -70,6 +78,9 @@
     font-size: 16px;
     padding: 5px 10px;
     outline: none;
+}
+.withoutResize {
+    resize: none;
 }
 
 .field:focus {

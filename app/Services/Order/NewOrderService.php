@@ -7,7 +7,6 @@ use App\Jobs\SendOrderToEmail;
 use App\Models\Order;
 use App\Repository\OrderRepository;
 
-
 class NewOrderService
 {
     public function __construct(readonly private OrderRepository $orderRepository)
@@ -26,6 +25,7 @@ class NewOrderService
         $this->orderRepository->save($order);
 
         $this->sendOrderToEmail($order);
+
         return $order;
     }
 

@@ -17,10 +17,12 @@ class Product extends Model
     {
         return $this->belongsTo(TypeProductList::class, 'productTypeId', 'id');
     }
+
     public static function getById(int $id)
     {
         return self::with(['profList', 'typeProduct'])->where('id', $id)->get()->first();
     }
+
     public static function getByArrayId(array $arId)
     {
         return self::with(['profList'])->whereIn('id', $arId)->get();

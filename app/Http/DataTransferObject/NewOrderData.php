@@ -2,7 +2,6 @@
 
 namespace App\Http\DataTransferObject;
 
-
 final class NewOrderData
 {
     public function __construct(

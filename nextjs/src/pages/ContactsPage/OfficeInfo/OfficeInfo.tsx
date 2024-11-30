@@ -3,6 +3,7 @@ import cn from 'classnames'
 import {featuresList, phoneList} from "./constants";
 
 const OfficeInfo = () => {
+    const phoneToLinkFormat = (phone: string) => phone.replaceAll(/\D/g, '')
     return (
         <div className='container plr-30'>
             <h2 className={styles.mainTitle}>Наш офис</h2>
@@ -20,7 +21,7 @@ const OfficeInfo = () => {
                     </div>
                     <div className={styles.titleItem}>Контакты для связи:</div>
                     <div className='flex gap10 wrap'>
-                        {phoneList.map((phone, index) => (<span key={phone} className={styles.tag}>{phone}</span>))}
+                        {phoneList.map((phone, index) => (<a key={phone} href={`tel:+${phoneToLinkFormat(phone)}`} className={styles.tag}>{phone}</a>))}
                     </div>
                     <div className={styles.titleItem}>Приемущества:</div>
                     <div className='direction gap10'>

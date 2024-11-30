@@ -17,6 +17,7 @@ class SendOrderToEmail implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     private readonly MailService $mailService;
+
     public function __construct(private readonly Order $order)
     {
         $this->mailService = new MailService();

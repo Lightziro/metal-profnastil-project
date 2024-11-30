@@ -2,9 +2,7 @@
 
 namespace App\Http\Transformer;
 
-
 use App\Http\DataTransferObject\ProductCategoryResponseData;
-use App\Models\ProductCategory;
 use Illuminate\Support\Collection;
 
 class ProductCategoryTransformer
@@ -21,6 +19,7 @@ class ProductCategoryTransformer
                 $category->slug,
             );
         }
+
         return $data;
     }
 }

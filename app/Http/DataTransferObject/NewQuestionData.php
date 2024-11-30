@@ -2,7 +2,6 @@
 
 namespace App\Http\DataTransferObject;
 
-
 final class NewQuestionData
 {
     public function __construct(

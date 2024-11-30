@@ -33,7 +33,7 @@ class MailService
         $this->mail->addAddress($to);
         $this->mail->isHTML(true);
         $this->mail->Subject = $subject;
-        $this->mail->Body    = $body;
+        $this->mail->Body = $body;
 
         return $this->mail->send();
     }

@@ -5,6 +5,7 @@ import {useRouter} from "next/router";
 import ModalForm from "../modal-form/ModalForm";
 import {Category, Product} from "../../types/item";
 import ReactImageZoom from 'react-image-zoom';
+import ModalItemForm from "../modal-item-form/ModalItemForm";
 
 interface ListProducts {
     products: Product[]
@@ -27,12 +28,12 @@ const ListProducts: React.FC<ListProducts> = ({products}) => {
     return (
         <div className='container'>
 
-            <h2 className={styles.textTitle}>Мы продаём</h2>
+            <h2 className={styles.textTitle}>Оформление по низким ценам:</h2>
             <div className={styles.wrapperList}>
                 {products.map((category) => <ItemProduct key={category.id} handleOpenRequest={handleOpenRequest}
                                                           product={category}/>)}
             </div>
-            <ModalForm entityList={products} itemSelected={item} typeItem='product' open={open}
+            <ModalItemForm entityList={products} itemSelected={item} typeItem='product' open={open}
                        onClose={handleOnClose}/>
         </div>
     );

@@ -18,27 +18,27 @@ class ProductCategorySeeder extends Seeder
             [
                 'name' => 'Профнастил',
                 'slug' => 'prof_list',
-                'url_slug' => 'profnastil'
+                'url_slug' => 'profnastil',
             ],
             [
                 'name' => 'Доборные элементы',
                 'slug' => 'additional_element',
-                'url_slug' => 'dobornye-elementy'
+                'url_slug' => 'dobornye-elementy',
             ],
             [
                 'name' => 'Металочерепица',
                 'slug' => 'metal_list',
-                'url_slug' => 'metalocherepitsa'
+                'url_slug' => 'metalocherepitsa',
             ],
             [
                 'name' => 'Гладкий лист',
                 'slug' => 'smooth_list',
-                'url_slug' => 'gladkiy-list'
+                'url_slug' => 'gladkiy-list',
             ],
             [
                 'name' => 'Саморезы',
                 'slug' => 'screw',
-                'url_slug' => 'samorezy'
+                'url_slug' => 'samorezy',
             ],
         ];
         foreach ($categories as $category) {

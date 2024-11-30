@@ -24,16 +24,16 @@ class OrderListLayout extends Table
                 ->render(function (Order $order) {
                     return data_get($order, 'entity.name') ?? 'Не указан';
                 }),
-//            TD::make('email', __('Email'))
-//                ->sort()
-//                ->cantHide()->render(function (Question $question) {
-//                    return $question->email ?? 'Не указан';
-//                }),
-//            TD::make('comment', __('Комментарий'))
-//                ->sort()
-//                ->cantHide()->render(function (Question $question) {
-//                    return $question->comment ?? 'Не указан';
-//                }),
+            //            TD::make('email', __('Email'))
+            //                ->sort()
+            //                ->cantHide()->render(function (Question $question) {
+            //                    return $question->email ?? 'Не указан';
+            //                }),
+            //            TD::make('comment', __('Комментарий'))
+            //                ->sort()
+            //                ->cantHide()->render(function (Question $question) {
+            //                    return $question->comment ?? 'Не указан';
+            //                }),
 
             TD::make('created_at', __('Дата создания'))
                 ->sort()

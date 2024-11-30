@@ -25,6 +25,5 @@ class ProductCategoryUrlSlug extends Migration
      */
     public function down()
     {
-
     }
 }

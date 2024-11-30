@@ -17,6 +17,7 @@ class QuestionController extends Controller
     {
         $data = $transformer->transform($request);
         $this->transactionService->run(fn () => $this->newQuestionService->create($data));
+
         return response()->json();
     }
 }

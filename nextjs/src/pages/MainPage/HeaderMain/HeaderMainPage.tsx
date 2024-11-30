@@ -29,6 +29,11 @@ export default function HeaderMainPage() {
                         партнер,
                         предоставляющий качественные товары в короткие сроки.
                     </div>
+                    <div className={styles.btnPhone}>
+                        <a
+                            href="tel:+78332535588"
+                            className={cn('btn-primary white w-200px')}>Позвонить</a>
+                    </div>
                 </div>
             </div>
         </>

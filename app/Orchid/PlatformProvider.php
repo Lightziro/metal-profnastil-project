@@ -8,7 +8,6 @@ use Orchid\Platform\Dashboard;
 use Orchid\Platform\ItemPermission;
 use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
-use Orchid\Support\Color;
 
 class PlatformProvider extends OrchidServiceProvider
 {
@@ -37,9 +36,9 @@ class PlatformProvider extends OrchidServiceProvider
             Menu::make('Заявки с сайта')
                 ->icon('note')
                 ->route('platform.orders.index'),
-//                ->badge(function () {
-//                    return 6;
-//                }),
+            //                ->badge(function () {
+            //                    return 6;
+            //                }),
             Menu::make('Категории')
                 ->title('Справочник')
                 ->icon('note')
@@ -50,7 +49,7 @@ class PlatformProvider extends OrchidServiceProvider
                 ->icon('user')
                 ->route('platform.systems.users')
                 ->permission('platform.systems.users')
-                ->title("Управление пользователями"),
+                ->title('Управление пользователями'),
 
             Menu::make(__('Права'))
                 ->icon('lock')

@@ -13,6 +13,10 @@
     background-color: #e7e7e7;
     border-radius: 25px;
     color: #383838;
+    text-decoration: none;
+    &:hover {
+        background-color: #d1d1d1;
+    }
 }
 
 .contactBlock {

@@ -2,14 +2,7 @@
 
 namespace App\Common\Abstract;
 
-use App\Common\Exception\EntityNotFoundException;
-use App\Common\Exception\EntityNotSaveException;
-use App\Common\Interface\EntityInterface;
 use App\Common\Interface\RepositoryInterface;
-use App\Common\Query\Filter;
-use App\Common\Query\Limit;
-use App\Common\Query\Sorting;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
@@ -25,8 +18,9 @@ abstract class Repository implements RepositoryInterface
     /**
      * @param int $entityId
      *
-     * @return T
      * @throws \Exception
+     *
+     * @return T
      */
     public function getById(int $entityId)
     {
@@ -34,6 +28,7 @@ abstract class Repository implements RepositoryInterface
         if ($entity === null) {
             throw new \Exception('Entity not found');
         }
+
         return $entity;
     }
 
@@ -61,8 +56,10 @@ abstract class Repository implements RepositoryInterface
 
     /**
      * @param Model $entity
-     * @return Model
+     *
      * @throws \Exception
+     *
+     * @return Model
      */
     public function save(Model $entity): Model
     {

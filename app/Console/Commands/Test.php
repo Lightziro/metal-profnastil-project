@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Command\Command as CommandAlias;
 
@@ -19,7 +18,6 @@ class Test extends Command
 
     public function handle(): int
     {
-        dispatch(new \App\Jobs\Test());
 
         return CommandAlias::SUCCESS;
     }

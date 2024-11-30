@@ -4,11 +4,12 @@ import Footer from "../../components/footer/Footer";
 import React from "react";
 import WorkTime from "./WorkTime/WorkTime";
 import OfficeInfo from "./OfficeInfo/OfficeInfo";
+import {MAIN_KEY_WORDS} from "../../constants/seo";
 
 const ContactsPage = () => {
     return (
         <div>
-            <HeadLayout title='Кировский завод металлопрофиля - Контакты' keyWords='киров профнастил, профнастил, профнастил цена, заборы из профнастила, металлочерепица, кровля, заборы киров, крыша' description='Продажа профнастила в г.Киров и по Кировской области по низким ценам'/>
+            <HeadLayout title='Контакты - Кировский завод металлопрофиля' keyWords={MAIN_KEY_WORDS} description='Продажа профнастила в г.Киров и по Кировской области по низким ценам'/>
             <Header></Header>
             <WorkTime/>
             <OfficeInfo/>

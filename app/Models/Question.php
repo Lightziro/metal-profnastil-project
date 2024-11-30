@@ -7,10 +7,10 @@ use Orchid\Filters\Filterable;
 use Orchid\Screen\AsSource;
 
 /**
- * @property string $name
+ * @property string      $name
  * @property string|null $phone
  * @property string|null $email
- * @property string $comment
+ * @property string      $comment
  */
 class Question extends Model
 {
@@ -41,6 +41,4 @@ class Question extends Model
     {
         $this->comment = $comment;
     }
-
-
 }

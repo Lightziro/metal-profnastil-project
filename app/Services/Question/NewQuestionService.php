@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Services\Question;
+
 use App\Http\DataTransferObject\NewQuestionData;
 use App\Jobs\SendQuestionToEmail;
 use App\Models\Question;
@@ -25,6 +27,7 @@ class NewQuestionService
 
         $this->sendQuestionToEmail($question);
         $this->sendNotifyUsers($question);
+
         return $question;
     }
 

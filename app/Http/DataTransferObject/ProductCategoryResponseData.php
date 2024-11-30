@@ -2,8 +2,6 @@
 
 namespace App\Http\DataTransferObject;
 
-use Illuminate\Support\Carbon;
-
 final class ProductCategoryResponseData
 {
     public function __construct(

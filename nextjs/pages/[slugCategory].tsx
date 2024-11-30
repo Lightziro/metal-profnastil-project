@@ -1,7 +1,7 @@
 import {GetStaticPaths, GetStaticProps} from "next";
 import {Category, Product} from "../src/types/item";
 import {getCategories, getProductByCategorySlug} from "../src/server/server-api";
-import ProductsCategoryPage from "../src/pages/products-category/ProductsCategoryPage";
+import ProductsCategoryPage from "../src/pages/ProductsCategory/ProductsCategoryPage";
 import React from "react";
 interface ProductCategory {
     products: Product[];

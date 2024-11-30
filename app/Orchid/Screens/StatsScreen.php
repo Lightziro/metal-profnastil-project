@@ -15,9 +15,10 @@ class StatsScreen extends Screen
         $ordersWeek = Order::query()->where('created_at', '>', now()->startOfWeek())->count();
         $questionsToday = Question::query()->where('created_at', '>', now()->startOfDay())->count();
         $questionsWeek = Question::query()->where('created_at', '>', now()->startOfWeek())->count();
+
         return [
             'metrics' => [
-                'ordersToday'    => ['value' => $ordersToday],
+                'ordersToday' => ['value' => $ordersToday],
                 'ordersWeek' => ['value' => $ordersWeek],
                 'questionsToday' => ['value' => $questionsToday],
                 'questionsWeek' => ['value' => $questionsWeek],
@@ -39,7 +40,7 @@ class StatsScreen extends Screen
     {
         return [
             Layout::metrics([
-                'Заявок сегодня'    => 'metrics.ordersToday',
+                'Заявок сегодня' => 'metrics.ordersToday',
                 'Заявок за неделю' => 'metrics.ordersWeek',
                 'Вопросов сегодня' => 'metrics.questionsToday',
                 'Вопросов за неделю' => 'metrics.questionsWeek',

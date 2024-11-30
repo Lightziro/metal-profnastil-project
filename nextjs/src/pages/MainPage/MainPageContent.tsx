@@ -6,13 +6,14 @@ import ListClient from "../../components/list-client/ListClient";
 import Footer from "../../components/footer/Footer";
 import React from "react";
 import {Category} from "../../types/item";
+import {MAIN_KEY_WORDS} from "../../constants/seo";
 interface MainPageContent {
     categories: Category[]
 }
 const MainPageContent: React.FC<MainPageContent> = ({categories}) => {
     return (
         <div>
-            <HeadLayout title='Профнастил и доборные элементы - Кировский завод металлопрофиля' keyWords='киров профнастил, профнастил, доборные элементы, профнастил цена, заборы из профнастила, металлочерепица, кровля, заборы киров, крыша' description='Профнастил, металлочерепицы, доборные элементы в г.Киров и по России по низким ценам с доставкой за один день'/>
+            <HeadLayout title='Профнастил и доборные элементы - Кировский завод металлопрофиля' keyWords={MAIN_KEY_WORDS} description='Купить профнастил, металлочерепицы, доборные элементы в городе Киров, в Кировской области и по России по низким ценам с доставкой за один день'/>
             <Header/>
             <HeaderMainPage></HeaderMainPage>
             <ListCategories categories={categories}/>

@@ -6,7 +6,6 @@ namespace App\Orchid\Screens\Order;
 
 use App\Models\Order;
 use App\Orchid\Layouts\Order\OrderListLayout;
-use App\Orchid\Layouts\Question\QuestionListLayout;
 use Orchid\Screen\Screen;
 
 class OrderListScreen extends Screen
@@ -20,6 +19,7 @@ class OrderListScreen extends Screen
                 ->paginate(),
         ];
     }
+
     public function name(): ?string
     {
         return 'Заявки с сайта';
