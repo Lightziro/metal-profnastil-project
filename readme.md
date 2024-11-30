@@ -1,3 +1,6 @@
+## Описание проекта
+
+
 
 ## Главная страница
 
@@ -28,9 +31,9 @@
 ![alt text](preview/DadataFIO.png)
 
 ## Используемые технологии при разработки
-- JavaScript.
-- React.
-- PHP.
-- Laravel.
-- HTML/CSS.
-- MySQL.
+- Next.JS 13(frontend SSR).
+- Laravel 8,6(Backend PHP).
+- Sass
+- Laravel Horizon(Queue dasbboard laravel)
+- Postgres 15(СУБД)
+- Redis(Для обработки очередей)
