@@ -15,7 +15,7 @@ const HeadLayout: React.FC<HeadLayout> = ({title, description, keyWords}) => {
             <meta name="robots" content="index"/>
             <meta property="og:title" content={title} key="title"/>
             <meta property="og:type" content="website"/>
-            <meta property="og:url" content="https://kirovprofnastil.ru/"/>
+            <meta property="og:url" content={process.env.NEXT_PUBLIC_SITE_URL}/>
             <meta name="yandex-verification" content="d50a76c747e5c4c5"/>
         </Head>
     )
