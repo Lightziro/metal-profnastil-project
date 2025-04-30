@@ -167,6 +167,9 @@ const widthWorkByType = {
 const ItemDetail: React.FC<ItemDetail> = ({handleChangeAdditional, item, handleGetAdditional}) => {
     const typeCoating = handleGetAdditional('typeCoating');
     const ral = handleGetAdditional('ral');
+    if (!item) {
+        return null;
+    }
 
     useEffect(() => {
         if (typeCoating === 'polymer') {
