@@ -14,6 +14,7 @@ use Orchid\Screen\AsSource;
  * @property string|null $phone
  * @property string|null $email
  * @property string      $comment
+ * @property array $additional_data
  */
 class Order extends Model
 {
@@ -25,6 +26,10 @@ class Order extends Model
         'phone',
         'email',
         'comment',
+    ];
+
+    protected $casts = [
+        'additional_data' => 'array',
     ];
 
     public function entity(): MorphTo
@@ -62,11 +67,44 @@ class Order extends Model
         $this->comment = $comment;
     }
 
+    public function setAdditionalData(?array $additionalData)
+    {
+        $this->additional_data = $additionalData;
+    }
+
     public function setEntityTypeAttribute($value): void
     {
         $this->attributes['entity_type'] = match ($value) {
             'category' => ProductCategory::class,
             'product' => Product::class,
         };
+    }
+
+    public static function getNameTypeCoating($value)
+    {
+        return match($value) {
+            'polymer' => 'полимер',
+            'galvanized' => 'оцинкованное',
+        };
+    }
+
+
+    public function getInfoOrder()
+    {
+        return collect($this->additional_data)->map(function ($item) {
+            switch ($item['attribute']) {
+                case 'ral':
+                    return "RAL: {$item['value']}";
+                case 'thickness':
+                    return "Толщина: {$item['value']}мм";
+                case 'typeCoating':
+                    $typeName = self::getNameTypeCoating($item['value']);
+                    return "Тип покрытия: $typeName";
+                case 'length':
+                    return "Длина: {$item['value']}м";
+            }
+            return null;
+
+        })->filter()->implode(', ');
     }
 }

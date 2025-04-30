@@ -11,6 +11,7 @@ final class NewOrderData
         private string|null $phone,
         private string|null $email,
         private string|null $comment,
+        private array|null $additionalData = [],
     ) {
     }
 
@@ -42,5 +43,10 @@ final class NewOrderData
     public function getComment(): ?string
     {
         return $this->comment;
+    }
+
+    public function getAdditionalData(): ?array
+    {
+        return $this->additionalData;
     }
 }

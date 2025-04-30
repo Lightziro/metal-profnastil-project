@@ -4,4 +4,5 @@ export interface FormOrder {
     fullName: string,
     phone: string,
     comment: string,
+    additionalData: {attribute: string; value: any}[]
 }

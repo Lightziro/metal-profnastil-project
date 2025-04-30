@@ -32,6 +32,13 @@ class ProductSeeder extends Seeder
             [
                 'category_slug' => 'prof_list',
                 'data' => [
+                    'name' => 'Профнастил С-20',
+                    'slug' => 'prof_list_c20',
+                ],
+            ],
+            [
+                'category_slug' => 'prof_list',
+                'data' => [
                     'name' => 'Профнастил С-21',
                     'slug' => 'prof_list_c21',
                 ],

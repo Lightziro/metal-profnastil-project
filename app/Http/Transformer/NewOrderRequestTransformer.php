@@ -16,6 +16,7 @@ class NewOrderRequestTransformer
             $request->input('phone'),
             $request->input('email'),
             $request->input('comment'),
+            $request->input('additionalData'),
         );
     }
 }

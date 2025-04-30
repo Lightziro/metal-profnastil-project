@@ -13,4 +13,5 @@ export const defaultFormOrder: FormOrder = {
     fullName: '',
     phone: '',
     comment: '',
+    additionalData: [],
 }

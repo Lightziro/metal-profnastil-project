@@ -8,6 +8,9 @@
 .pictureItem {
     width: 100%;
 }
+.rootModal {
+    max-width: fit-content !important;
+}
 
 .iconClose {
     position: absolute;
@@ -41,6 +44,38 @@
 }
 .infoContainer, .formContainer {
     flex: 1;
+}
+.rowGroup {
+    display: flex;
+    gap: 10px;
+    .formBlock {
+        flex: 1;
+    }
+    &.minGap {
+        gap: 5px;
+    }
+    &.wrap {
+        flex-wrap: wrap;
+    }
+}
+.ralBlock {
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+    &.active {
+        border: 1px solid #007dfd;
+    }
+    &.colorBlack {
+        color: black;
+    }
+}
+.detailWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 @media screen and (max-width: 768px) {
     .modalWrapper {

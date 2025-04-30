@@ -22,9 +22,10 @@ class NewOrderService
         $order->setEmail($orderData->getEmail());
         $order->setComment($orderData->getComment());
         $order->setPhone($orderData->getPhone());
+        $order->setAdditionalData($orderData->getAdditionalData());
         $this->orderRepository->save($order);
 
-        $this->sendOrderToEmail($order);
+//        $this->sendOrderToEmail($order);
 
         return $order;
     }
