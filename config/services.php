@@ -33,5 +33,10 @@ return [
     'sparkpost' => [
         'secret' => env('SPARKPOST_SECRET'),
     ],
+    'telegram' => [
+        'url' => env('TELEGRAM_URL'),
+        'api_key' => env('TELEGRAM_API_KEY'),
+        'notification_to_id' => env('TELEGRAM_NOTIFICATION_TO_ID'),
+    ]
 
 ];

@@ -4,6 +4,7 @@ namespace App\Services\Order;
 
 use App\Http\DataTransferObject\NewOrderData;
 use App\Jobs\SendOrderToEmail;
+use App\Jobs\SendOrderToTelegram;
 use App\Models\Order;
 use App\Repository\OrderRepository;
 
@@ -25,7 +26,8 @@ class NewOrderService
         $order->setAdditionalData($orderData->getAdditionalData());
         $this->orderRepository->save($order);
 
-//        $this->sendOrderToEmail($order);
+        $this->sendOrderToEmail($order);
+        SendOrderToTelegram::dispatch($order);
 
         return $order;
     }

@@ -4,6 +4,7 @@ namespace App\Services\Question;
 
 use App\Http\DataTransferObject\NewQuestionData;
 use App\Jobs\SendQuestionToEmail;
+use App\Jobs\SendQuestionToTelegram;
 use App\Models\Question;
 use App\Models\User;
 use App\Notifications\NewQuestion;
@@ -25,8 +26,8 @@ class NewQuestionService
         $question->setComment($questionData->getComment());
         $question = $this->questionRepository->save($question);
 
-        $this->sendQuestionToEmail($question);
-        $this->sendNotifyUsers($question);
+//        $this->sendQuestionToEmail($question);
+        SendQuestionToTelegram::dispatch($question);
 
         return $question;
     }
